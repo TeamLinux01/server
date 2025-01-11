@@ -15,6 +15,8 @@ FROM ghcr.io/centos-workstation/homeserver:latest
 
 COPY build.sh /tmp/build.sh
 
+COPY etc /etc
+
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
     ostree container commit && \
