@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/silverblue-main:latest
+FROM ghcr.io/centos-workstation/homeserver:latest
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable
