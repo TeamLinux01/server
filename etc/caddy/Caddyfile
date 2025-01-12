@@ -1,0 +1,26 @@
+{
+	admin off
+}
+
+*.server.home.arpa, server.home.arpa {
+	tls internal {
+	}
+
+	@server {
+		host server.home.arpa
+	}
+
+	@portainer {
+		host portainer.server.home.arpa
+	}
+
+	handle server {
+		root * /usr/share/caddy
+		file_server
+	}
+	handle portainer {
+		encode gzip zstd
+		reverse_proxy portainer:9443
+	}
+
+}
