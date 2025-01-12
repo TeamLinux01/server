@@ -4,6 +4,7 @@
 
 *.server.home.arpa, server.home.arpa {
 	tls internal {
+		on_demand
 	}
 
 	@server {
@@ -14,13 +15,13 @@
 		host portainer.server.home.arpa
 	}
 
-	handle server {
+	handle @server {
 		root * /usr/share/caddy
 		file_server
 	}
-	handle portainer {
+
+	handle @portainer {
 		encode gzip zstd
 		reverse_proxy portainer:9443
 	}
-
 }

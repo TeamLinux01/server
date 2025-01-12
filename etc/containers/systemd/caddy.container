@@ -5,7 +5,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Container]
-Image=docker.io/library/caddy:alpine
+Image=docker.io/library/caddy:latest
 ContainerName=caddy
 AutoUpdate=registry
 #Notify=true
@@ -14,7 +14,7 @@ LogDriver=journald
 PublishPort=80:80
 PublishPort=443:443
 PublishPort=443:443/udp
-Volume=/etc/caddy/CaddyFile:/etc/caddy/CaddyFile:ro,Z
+Volume=/etc/caddy/Caddyfile:/etc/caddy/Caddyfile:ro,Z
 Volume=caddy-config.volume:/config
 Volume=caddy-data.volume:/data
 AddCapability=net_admin
