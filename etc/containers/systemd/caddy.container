@@ -14,6 +14,7 @@ LogDriver=journald
 PublishPort=80:80
 PublishPort=443:443
 PublishPort=443:443/udp
+Volume=/etc/caddy/CaddyFile:/etc/caddy/CaddyFile:ro,Z
 Volume=caddy-config.volume:/config
 Volume=caddy-data.volume:/data
 AddCapability=net_admin
